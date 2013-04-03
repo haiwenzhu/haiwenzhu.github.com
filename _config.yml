@@ -1,4 +1,4 @@
-auto: true
+auto: true 
 pygments: true
 markdown: redcarpet
 permalink: /:month-:day-:year/:title.html
