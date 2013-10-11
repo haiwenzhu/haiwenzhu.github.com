@@ -139,8 +139,13 @@ div.post_list_item_date {
   font-size: 10px;
 }
 div.highlight pre {
-  width: 690px;
-  overflow: auto;
+	width: 690px;
+	background:#F9F9F9 none repeat scroll 0 0;
+	border:1px solid #E7E9EE;
+	color:#555555;
+	font-size:90%;
+	overflow:auto;
+	padding:5px;	
 }
 div.error404 {
   width: 100%;
