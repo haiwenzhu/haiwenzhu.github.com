@@ -24,18 +24,17 @@ categories:
 	ZEND_API double zend_strtod (CONST char *s00, CONST char **se)
 
 不过很囧的是，这个函数太长了，看了半天都没看懂，不过`"1E1"`对应的最终调用是`zend_strtod("1E1", "E1")`，于是写了一个扩展看这个函数调用到底输出多少
-```c
-PHP_FUNCTION(sample_strtod)
-{
-	char s[4];
-	char se[3];
-	sprintf(s, "1E1");
-	sprintf(se, "E1");
-	double ret;
-	ret = zend_strtod(s, se);
-	RETURN_DOUBLE(ret);
-}
-```
+
+	PHP_FUNCTION(sample_strtod)
+	{
+		char s[4];
+		char se[3];
+		sprintf(s, "1E1");
+		sprintf(se, "E1");
+		double ret;
+		ret = zend_strtod(s, se);
+		RETURN_DOUBLE(ret);
+	}
 
 函数的最终返回是10。
 
