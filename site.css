@@ -50,17 +50,24 @@ ul.content_list li {
   color: #88c34b;
 }
 #header_top_container {
-  position: relative;
-  width: 100%;
-  height: 110px;
-  padding-top: 10px;
+  	height: 120px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    position: relative;
+    width: 100%;
 }
 #header_top_container a:hover {
   color: #88c34b;
 }
 #header_gravatar_container {
-  float: left;
-  width: 100px;
+	background-image: url("http://0.gravatar.com/avatar/522e19fd6330c6a03a84032dc9bdcbc2");
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 50%;
+    float: left;
+    height: 130px;
+    margin-left: 10%;
+    width: 130px;
 }
 #header_details_container {
   float: right;
