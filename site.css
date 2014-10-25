@@ -1,6 +1,6 @@
 body {
-  font-family: 'Droid Sans', arial, sans-serif;
-  font-size: 0.9em;
+  font-family: 微软雅黑, 'Droid Sans', arial, sans-serif;
+  font-size: 0.85em;
   color: #4c4c4c;
   background-color: #fff;
 }
@@ -24,14 +24,14 @@ ul.content_list li {
   font-size: 12px;
   padding-bottom: 12px;
 }
-#main {
+.main {
   width: 100%;
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
   padding-top: 20px;
 }
-#header {
+.header_default {
   height: auto;
   vertical-align: top;
   display: table-cell;
@@ -59,7 +59,7 @@ ul.content_list li {
 #header_top_container a:hover {
   color: #88c34b;
 }
-#header_gravatar_container {
+.header_gravatar_container {
 	background-image: url("http://0.gravatar.com/avatar/522e19fd6330c6a03a84032dc9bdcbc2");
     background-repeat: no-repeat;
     background-size: cover;
@@ -67,16 +67,16 @@ ul.content_list li {
     float: left;
     height: 130px;
     margin-left: 10%;
+	margin-bottom: 20px;
     width: 130px;
 }
-#header_details_container {
+.header_details_container {
   float: right;
-#padding-right: 65px;
 }
-#header_details_container li {
+.header_details_container li {
   font-size: 14px;
 }
-#page {
+.page {
   display: table-cell;
   height: auto;
   vertical-align: top;
@@ -84,6 +84,9 @@ ul.content_list li {
   padding-left: 45px;
   padding-right: 45px;
   padding-top: 50px;
+}
+.page p {
+	line-height: 1.4em;
 }
 #header #blog_title {
   font-size: 1.3em;
@@ -97,9 +100,8 @@ ul.content_list li {
 div.post_title, div.page_title {
   font-size: 1.3em;
   font-weight: bold;
-  padding-bottom: 20px;
 }
-#sidebar {
+.sidebar {
   display: table-cell;
   width: 250px;
   text-align: left;
@@ -169,8 +171,27 @@ div.error404 .message {
   padding: 20px;
 }
 @media screen and (max-width: 480px) {
-	.hideForSmallScreen {
+	.hide_for_mobile {
 		display: none;
-		color: red;
+	}
+	.header_mobile {
+		width: 89%;
+		padding: 10px 5%;
+		display: block !important;
+		height: auto;
+	}
+	.header_gravatar_container {
+		margin-left: 25%;
+	}
+	.header_details_container {
+		margin-right: 10%;
+	}
+	.page_mobile {
+		width: 89%;
+		padding: 10px 5%;
+		display: block !important;
+	}
+	.highlight {
+		overflow-x: scroll;
 	}
 }

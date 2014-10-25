@@ -3,39 +3,41 @@
   <meta http-equiv="Content-Type"  content="text/html; charset=utf-8" />
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0" />
   <title>{{ page.title }}</title>
-  <link rel="stylesheet" type="text/css" href="/site.css"/>
   <link rel="stylesheet" type="text/css" href="/syntax.css"/>
   <link rel="stylesheet" href="/styles/default.css">
   <script src="/highlight.pack.js"></script>
   <script>hljs.initHighlightingOnLoad();</script>
+  <link rel="stylesheet" type="text/css" href="/site.css"/>
 </head>
 <body>
-<div id="main">
-<div id="header" class="hideForSmallScreen">
-  <div id="header_top_container">
-    <div id="header_gravatar_container">
+<div id="main" class="main">
+<div id="header" class="header_default header_mobile">
+  <div class="header_top_container">
+    <div class="header_gravatar_container">
     </div>
-    <div id="header_details_container">
+    <div class="header_details_container">
       <ul class="content_list">
         <li><a href="/about">About</a></li>
         <li><a _target="blank" href="https://github.com/haiwenzhu?tab=repositories">GitHub</a></li>
       </ul>
     </div>
   </div>
-  <hr>
+  <hr/>
+  <div class="hide_for_mobile">
   <ul class="content_list">
   <div class="list_title">recent posts</div>
 {% for post in site.posts limit:10 %}    <li class="recent_post"><a href="{{ post.url }}">{{ post.title }}</a></li>{% endfor %}
   </ul>
-  <hr>
+  <hr/>
+  </div>
   <a href="/all_posts">All Posts</a>
 </div>
-<div id="page">
+<div id="page" class="page page_mobile">
 {{ content }}
-  <hr>
+  <hr/>
   <div id="footer">&copy; 2013 HaiwenZhu</div>
 </div>
-<div id="sidebar">
+<div id="sidebar" class="sidebar hide_for_mobile">
   <div class="list_title">categories</div>
   <ul class="content_list">
 {% for category in site.categories %}    <li><a href="/categories/#{{ category[0] }}">{{ category[0] }}</a></li>{% endfor %}

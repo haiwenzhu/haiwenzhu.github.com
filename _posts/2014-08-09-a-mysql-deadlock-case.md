@@ -55,9 +55,11 @@ script2.php
 	}
 
 	$db->commit();
+
 script2.php紧接着script1.php运行，script2.php会报错：Deadlock found when trying to get lock; try restarting transaction。`show engine innodb status`看到的确发生了死锁，死锁的原因是因为script1的第一条语句的锁和script2中的replace语句发生了锁冲突，script1的第二条语句又再次申请锁时发生了死锁。
 一开始很难理解为什么script1中的第二条语句还会再次申请锁，而且锁的类型和前一条语句锁的类型不一直，于是google了一下，发现MySQL对replace的实现其实是delete+insert。让我们先忘掉replace看另外一个例子：
 script3.php
+
 	<?php
 	$db = new mysqli('localhost', 'root', '', 'test');
 	$db->begin_transaction();
@@ -71,7 +73,9 @@ script3.php
 	}
 	
 	$db->commit();
+
 script4.php
+
 	<?php
 	$db = new mysqli('localhost', 'root', '', 'test');
 	$db->begin_transaction();
@@ -83,6 +87,7 @@ script4.php
 	}
 	
 	$db->commit();
+
 scirpt3.php和script4.php先后执行也会出现死锁，产生死锁的原因为：
 
 
@@ -92,7 +97,7 @@ scirpt3.php和script4.php先后执行也会出现死锁，产生死锁的原因�
 
 script3中的insert会加共享锁是因为当出现重复键的时候，insert会加一个共享锁到相应的记录。如果把name字段上的unique key去掉变不会出现死锁。
 
-个人理解产生死锁的根本原因是因为update和insert加锁的类型是不一样的，update和delete会加 exclusive next-key lock，而insert加的是index-record lock。
+个人理解产生死锁的根本原因是因为update和insert加锁的类型是不一样的，update和delete会加 exclusive next-key lock，而insert加的是index-record lock。第二个问题很久很久之前有人曾提过[bug](http://bugs.mysql.com/bug.php?id=1866)，不过对bug的解释不是很明白。
 
 回到第一个问题，如果把replace into改成insert on dumplicate key update,死锁也会消失。很多人给出的建议也似尽量避免使用replace into。
 
