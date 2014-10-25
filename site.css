@@ -168,3 +168,9 @@ div.error404 .message {
   color: #333;
   padding: 20px;
 }
+@media screen and (max-width: 480px) {
+	.hideForSmallScreen {
+		display: none;
+		color: red;
+	}
+}
