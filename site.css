@@ -4,9 +4,6 @@ body {
   color: #4c4c4c;
   background-color: #fff;
 }
-@-ms-viewport{
-  width: device-width;
-}
 li {
   list-style-position: inside;
 }
@@ -173,9 +170,13 @@ div.error404 .message {
   color: #333;
   padding: 20px;
 }
-@media screen and (max-width: 480px) {
+@media (max-width: 480px) {
+	.mobile {
+		max-width: 100%;
+		width: 100%;
+	}
 	.main_mobile {
-		max-width: 480px;
+		max-width: 100%;
 		overflow-x: hidden;
 		margin-left: 0px;
 		margin-right: auto;
