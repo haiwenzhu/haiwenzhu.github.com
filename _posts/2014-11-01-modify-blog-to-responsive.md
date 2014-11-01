@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "将Blog改成了响应时"
+title: "将Blog改成了响应式"
 categories:
   - HTML/CSS
 ---
