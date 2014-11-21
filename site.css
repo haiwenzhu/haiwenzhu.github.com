@@ -60,7 +60,7 @@ ul.content_list li {
   color: #88c34b;
 }
 .header_gravatar_container {
-	background-image: url("http://s.gravatar.com/avatar/522e19fd6330c6a03a84032dc9bdcbc2?s=130");
+	background-image: url("./header.jpeg");
     background-repeat: no-repeat;
     background-size: cover;
     border-radius: 50%;
@@ -175,6 +175,12 @@ div.error404 .message {
 .highlight {
 	margin: 10px 0;
 	line-height: 1.5em;
+}
+.clear {
+	clear: both;
+}
+ol li {
+	line-height: 2.4em;
 }
 @media (max-width: 480px) {
 	.mobile {
