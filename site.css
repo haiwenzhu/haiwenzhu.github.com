@@ -14,6 +14,7 @@ a:hover {
 hr {
   border: 0;
   border-bottom: 1px dotted #4c4c4c;
+  margin: 30px 0px;
 }
 ul.content_list {
   list-style-type: none;
@@ -39,6 +40,7 @@ ul.content_list li {
   height: 100%;
   text-align: left;
   color: #444;
+  padding-top: 55px;
 }
 #header a:link, #header a:visited, #header a:active {
   color: #999;
@@ -212,6 +214,7 @@ ol li {
 		width: 89%;
 		padding: 10px 5%;
 		display: block !important;
+		margin-top: 28px;
 	}
 	.highlight {
 		overflow-x: scroll;
