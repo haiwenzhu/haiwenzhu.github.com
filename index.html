@@ -1,0 +1,16 @@
+---
+layout: default
+title: "HaiwenZhu&rsquo;s Blog"
+---
+
+{% for post in paginator.posts %}
+<div class="post">
+  <div class="post_title">{{ post.title }}</div>
+  <div class="post_list_item_date">{{ post.date | date: "%A, %B %d, %Y" }}</div>
+  <div class="post_body">
+{{ post.content }}
+  </div>
+  <div class="separator">&nbsp;</div>
+</div>
+{% endfor %}
+{% include pagination.html %}

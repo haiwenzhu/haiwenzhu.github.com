@@ -1,0 +1,15 @@
+<div class="pagination">
+  {% if paginator.previous_page %}
+  	{% if paginator.previous_page == 1 %}
+    	<a href="/" class="previous">Previous</a>
+    {% else %}
+    	<a href="/posts/{{ paginator.previous_page }}" class="previous">Previous</a>
+    {% endif %}
+  {% else %}
+  {% endif %}
+  <!-- <span class="page_number ">Page: {{ paginator.page }} of {{ paginator.total_pages }}</span>  -->
+  {% if paginator.next_page %}
+    <a href="/posts/{{ paginator.next_page }}" class="next">Next</a>
+  {% else %}
+  {% endif %}
+</div>
