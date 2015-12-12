@@ -36,7 +36,7 @@ ul.content_list li {
   height: auto;
   vertical-align: top;
   display: table-cell;
-  width: 250px;
+  width: 18%;
   height: 100%;
   text-align: left;
   color: #444;
@@ -183,6 +183,15 @@ div.error404 .message {
 }
 ol li {
 	line-height: 2.4em;
+}
+.pagination {
+	text-align: center;
+}
+.previous {
+	margin: 0px 4px;
+}
+.next {
+	margin: 0px 4px;
 }
 @media (max-width: 480px) {
 	.mobile {

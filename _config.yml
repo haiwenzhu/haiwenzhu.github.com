@@ -2,3 +2,6 @@ auto: true
 pygments: true
 markdown: redcarpet
 permalink: /:month-:day-:year/:title.html
+timezone: Asia/Shanghai
+paginate: 2
+paginate_path: "/posts/:num/"
