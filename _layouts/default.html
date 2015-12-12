@@ -37,7 +37,7 @@
 <div id="page" class="page page_mobile">
 {{ content }}
   <hr/>
-  <div id="footer">&copy; 2013 HaiwenZhu</div>
+  <div id="footer">&copy; <span id="year_span"></span> HaiwenZhu</div>
 </div>
 <div id="sidebar" class="sidebar hide_for_mobile">
   <div class="list_title">categories</div>
@@ -48,6 +48,7 @@
 </div>
 </div>
 <script>
+	document.getElementById('year_span').innerText = (new Date()).getFullYear();
 	if (window.screen.width != window.innerWidth) {
 		document.getElementById("main").setAttribute("style", "max-width: " + window.innerWidth + "px !important;")
 	}
