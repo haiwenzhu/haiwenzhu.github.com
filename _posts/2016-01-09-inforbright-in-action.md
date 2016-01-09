@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "letsencrypt实践"
+title: "Inforbright实践"
 categories:
   - Inforbright
   - Database

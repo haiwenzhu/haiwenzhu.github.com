@@ -25,6 +25,9 @@ ul.content_list li {
   font-size: 12px;
   margin-bottom: 20px;
 }
+code {
+	background: #F0F0F0;
+}
 .main {
   width: 100%;
   max-width: 1200px;
