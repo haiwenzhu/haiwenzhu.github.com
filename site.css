@@ -86,9 +86,13 @@ code {
   height: auto;
   vertical-align: top;
   width: 660px;
+  max-width: 660px;
   padding-left: 45px;
   padding-right: 45px;
   padding-top: 50px;
+}
+.page img {
+	max-width: 660px;
 }
 .page p {
 	line-height: 2.4em;
@@ -227,6 +231,9 @@ ol li {
 		padding: 10px 5%;
 		display: block !important;
 		margin-top: 28px;
+	}
+	.page_mobile img {
+		max-width: 89%;
 	}
 	.highlight {
 		overflow-x: scroll;
