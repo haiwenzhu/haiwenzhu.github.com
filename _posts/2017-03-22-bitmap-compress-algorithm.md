@@ -16,6 +16,7 @@ categories:
 通过RLE编码之后为：`12W1B12W3B24W1B14W`。bitmap的值只包含重复的0和1，基于ELB的压缩会是不错的选择。Roaring的压缩思路和前三者都有不同，接下来我会试着介绍WAH、Concise、Roaring各自的实现细节。
 
 首先是WAH，WAH继承自BBC，其主要思路为：
+
 1. 把bitmap按每31位分组，每个组称为一个block
 2. 如果block既包含0又包含1，用block以1+block的内容表示
 3. 如果block只包含0，则以00+n表示，其中n标识block的数量
@@ -80,9 +81,7 @@ WAH、Concise、Roaring算法的性能对比在这篇[paper][1]里有提及，�
 参考链接：
 
 - http://github.tiankonguse.com/algorithm.html#sec-1-1-5
-
 - https://arxiv.org/pdf/1402.6407.pdf
-
 - https://github.com/RoaringBitmap/RoaringBitmap
 
 [1]: http://github.tiankonguse.com/algorithm.html#sec-1-1-5
