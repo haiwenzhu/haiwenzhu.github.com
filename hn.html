@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<title>List Of Hacker News Front</title>
+<meta name="viewport" content="width=device-width initial-scale=1">
+<style>
+li {
+line-height: 2em;
+}
+</style>
+<body>
+<ul id="list">
+</ul>
+</body>
+<script>
+Date.prototype.addDays = function(days) {
+var dat = new Date(this.valueOf());
+dat.setDate(dat.getDate() + days);
+return dat;
+}
+var d = new Date();
+list = ''
+for (i = 0; i < 30; i += 1) {
+day = d.getFullYear()+'-'+(d.getMonth()+1)+'-'+d.getDate();
+list += '<li><a href="https://news.ycombinator.com/front?day='+day+'" target="blank">'+day+'</a></li>';
+d = d.addDays(-1);
+}
+document.getElementById('list').innerHTML = list;
+</script>
+</html>
