@@ -1,5 +1,6 @@
 ---
 layout: post
+comments: true
 title: "Prometheus实践之histtogram-quantile实现"
 categories:
   - Microservice
