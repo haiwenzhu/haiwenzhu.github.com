@@ -14,7 +14,7 @@ categories:
 
 ## Histogram和Summary的区别
 Prometheus提供了四种[数据类型](https://prometheus.io/docs/concepts/metric_types/)，其中Histogram和Summary是比较复杂和难理解的。
-先看一个histogram的数据示例：![hisgoram sample](https://drive.google.com/file/d/1BQb2wbWJwJmwHuQHODPEddmARk08yrdL/view)其中，test_histogram是数据指标的名称，一个histogram的数据指标会包含多个数据维度：sum、count、bucket，其中sum是所有数据的和，count是数据个数，bucket是小于等于该bucket的数据个数。buckets可以理解为是对数据指标值域的一个划分，划分的依据应该基于数据值的分布，比如某个指标99%的值都是小于100的，bucket的划分应该集中在100以内。bucket的划分会影响到quantaile计算的精度，这块在后面histogram_quantile这个函数的解释时会提到。
+先看一个histogram的数据示例：![hisgoram sample](https://i.imgur.com/KcPTT4p.png)其中，test_histogram是数据指标的名称，一个histogram的数据指标会包含多个数据维度：sum、count、bucket，其中sum是所有数据的和，count是数据个数，bucket是小于等于该bucket的数据个数。buckets可以理解为是对数据指标值域的一个划分，划分的依据应该基于数据值的分布，比如某个指标99%的值都是小于100的，bucket的划分应该集中在100以内。bucket的划分会影响到quantaile计算的精度，这块在后面histogram_quantile这个函数的解释时会提到。
 Summary和histogram比较类似，两者的主要区别在于Summary的quantile计算是在数据上报的时候就已经计算好的，需要在定义数据指标的时候就指定quantile的值，因为是数据上报计算的quantile，所以不支持包含数据过滤和聚合的quantile计算，文档里有详细的histogram和quantile的[区别](https://prometheus.io/docs/practices/histograms/)。
 
 ## `histogram_quantile`实现
