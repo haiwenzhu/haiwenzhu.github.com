@@ -1,6 +1,7 @@
 auto: true 
 pygments: true
 markdown: redcarpet
+highlighter: rouge
 permalink: /:month-:day-:year/:title.html
 timezone: Asia/Shanghai
 paginate: 5
