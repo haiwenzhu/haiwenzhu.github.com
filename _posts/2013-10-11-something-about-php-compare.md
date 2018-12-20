@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "关于PHP字符串比较的一次探究"
+comments: true
 categories:
   - PHP
 ---

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "将Blog改成了响应式"
+comments: true
 categories:
   - HTML/CSS
 ---

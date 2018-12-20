@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "MySQL死锁案例分享"
+comments: true
 categories:
   - PHP
   - MySQL

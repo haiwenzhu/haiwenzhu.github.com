@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "MySQL双主master-master配置实践"
+comments: true
 categories:
   - MySQL
 ---

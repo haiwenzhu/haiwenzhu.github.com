@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Servic Mesh实践"
+comments: true
 categories:
   - Microservice
 ---

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "letsencrypt实践"
+comments: true
 categories:
   - web
 ---

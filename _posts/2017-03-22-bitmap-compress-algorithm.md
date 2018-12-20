@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "bitmap压缩算法对比"
+comments: true
 categories:
   - Algorithm
 ---

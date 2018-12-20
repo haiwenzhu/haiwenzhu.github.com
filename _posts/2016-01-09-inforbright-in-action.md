@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Inforbright实践"
+comments: true
 categories:
   - Inforbright
   - Database
