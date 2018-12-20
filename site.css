@@ -140,6 +140,12 @@ div.post .separator {
   box-shadow: inset 0 30px 30px -30px rgba(0,0,0,0.5);
   padding-bottom: 60px;
 }
+.post_body {
+  margin: 1em 0;
+}
+.post_content {
+  margin: 1em 0;
+}
 div.category_title {
   font-size: 1.5em;
   font-weight: bold;
