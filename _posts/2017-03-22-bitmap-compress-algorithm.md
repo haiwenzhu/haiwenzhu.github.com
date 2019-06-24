@@ -23,7 +23,7 @@ categories:
 3. 如果block只包含0，则以00+n表示，其中n标识block的数量
 4. 如果block只包含1， 则已01+n表示，其中n标识block的数量
 
-![img1](http://github.tiankonguse.com/images/concise-wah.png) [图片来源][1]
+![img1](https://i.imgur.com/nHKCofd.jpg) [图片来源][1]
 
 n的最大可取值为2^30-1，通常情况下n都远小于这个值，因此存在空间的浪费。
 
@@ -33,7 +33,7 @@ Concise是对WAH算法的改进版本，把block的后30个bit位分成了两段
 - 后25个bit表示后面还有多少个block
 
 下面这个例子，是对 {3, 5, 31–93, 1024, 1028, 1 040 187 422}数组的压缩：
-![](http://github.tiankonguse.com/images/concise-concise.png) [图片来源][1]
+![](https://i.imgur.com/LcBXfSu.jpg) [图片来源][1]
 
 - word#0表示0-30，{3,5}
 - word#1表示31-92，{31-92}，前2bit01表示全为1，中间5bit全为0表示不存在反转，后25bit为1表示后面还有1个全为1的block，数据范围为31到31 + 31 + 31 * 1- 1
