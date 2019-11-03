@@ -44,6 +44,7 @@ id是主键，age上有索引。
 #### 范围锁(Gap Locks)
 范围锁也是一种加在索引上的锁，但是和记录锁不一样的地方是，它锁的是一个范围。
 还是上面的表，`SELECT * FROM test WHERE age<10 FOR UPDATE`会加一个范围锁从而阻止其它事务向test表中插入age<10的记录。
+所谓的范围，是指两个索引值之间的范围，比如age>15 AND age < 18，对应的gap lock是(10, 20)，由比如age>30，对应的gap lock是(20, +∞)
 
 #### 临键锁(Next Key Locks)
 临键锁是一种记录锁和范围锁的合体，它既锁了记录，又锁了范围。前面提到这条SQL`SELECT name FROM test WHERE age=10 FOR UPDATE`会在id=1上加上记录锁不够准确，是因为在不同的事务隔离级别下加的锁是不同的，在`READ COMMITTED`级别下，加的是记录锁，而在`REPEATABLE READ`级别下，加的是临键锁，MySQL默认的事务隔离级别是`REPEATABLE READ`。上面的SQl，在`REPEATABLE READ`级别下，会同时锁住`(-INF, 10)`和`(10, 20)`以阻止其它事务插入age在该范围的记录。
@@ -51,6 +52,13 @@ id是主键，age上有索引。
 
 #### 插入意向锁(Insert Intention Locks)
 当事务向某一个范围里插入一行记录时，不会阻塞其它事务往该范围内插入记录，前提是插入的记录不冲突。如果事务向表test插入age=15的记录，不会阻塞另一个事务插入age=16的记录，单位阻塞其它事务插入age=15的记录。
+
+#### Auto-Inc lock
+对于自增id并发插入的场景，InnoDB支持以下三种锁配置：
+- Traditional lock mode：所有insert场景，都会使用一个表级的锁
+- Consecutive lock mode(default)：对于插入条数不确定的场景，使用表级锁，其他场景会使用一个比标记锁轻量的锁
+- Interleaved lock mode：所有的插入场景，都使用非标记锁
+前两种模式可以保证单个insert语句对应的自增id都是连续的，第三种模式不能有这个保证。
 
 #### MVCC(Multiversion concurrency control)
 SELECT语句默认时不加锁的，InnoDB是如何实现重复读的呢？答案是MVCC，MVCC简单点说就是为每一行维护了一个版本号，当前事务只能读到版本号在当前事务之前的记录。
